@@ -13,10 +13,10 @@ const admin = require("../middlewares/admin");
 
 const router = Router();
 
-router.get("/", auth, customerController.getAll);
+router.get("/", /*auth,*/ customerController.getAll);
 router.get(
   "/:customerId",
-  auth,
+  // auth,
   validateParamId("customerId"),
   validate,
   customerController.getOne
@@ -24,7 +24,7 @@ router.get(
 
 router.post(
   "/",
-  [auth, admin],
+  // [auth, admin],
   customerValidationSchema,
   validate,
   customerController.create

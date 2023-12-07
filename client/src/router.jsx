@@ -2,7 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 
 import RootLayout from "layouts/RootLayout";
 import ErrorPage from "pages/ErrorPage";
-import TemplatePage from "pages/TemplatePage";
+import CustomersPage from "pages/CustomersPage";
+import AddCustomerPage from "pages/AddCustomerPage";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <TemplatePage />,
+        element: <CustomersPage />,
       },
       {
         path: "/customers",
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/customer/new",
-        element: false,
+        element: <AddCustomerPage />,
       },
       {
         path: "/customer/edit/:customerId",
